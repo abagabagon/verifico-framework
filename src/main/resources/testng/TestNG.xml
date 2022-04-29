@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login">
+	<parameter name="mode" value="HYBRID"></parameter> <!-- HYBRID, WEB or MOBILE -->
+	<parameter name="environment" value="STAGING"></parameter> <!-- DEV, TEST, STAGING or PROD -->
+	<parameter name="web.device" value="DESKTOP"></parameter> <!-- DESKTOP or MOBILE -->
+	<parameter name="web.browser" value="CHROME"></parameter> <!-- CHROME, FIREFOX, SAFARI or EDGE -->
+	<parameter name="retry" value="3"></parameter>
+	<listeners>
+		<listener class-name="tests.Listener" />
+		<listener class-name="tests.AnnotationTransformer" />
+	</listeners>
+	<test name="Login" preserve-order="true" enabled="true">
+		<parameter name="testmanagement.runid" value="300"></parameter>
+		<classes>
+			<class name="tests.login.TestLogin" >
+				<methods>
+					<include name="" description=""></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
